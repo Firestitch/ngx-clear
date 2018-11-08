@@ -5,4 +5,5 @@ import { Component } from '@angular/core';
   templateUrl: 'example2.component.html'
 })
 export class Example2Component {
+  public model;
 }
