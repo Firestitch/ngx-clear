@@ -6,12 +6,14 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { FsExampleModule } from '@firestitch/example';
 
-import { FsComponentModule } from 'fs-package';
+import { FsClearModule } from 'ngx-clear';
 
 import { AppMaterialModule } from './material.module';
 import {
 ExampleComponent,
-ExamplesComponent } from './components';
+ExamplesComponent,
+Example2Component,
+ClearCustomComponent } from './components';
 import { AppComponent } from './app.component';
 
 
@@ -23,7 +25,7 @@ const routes: Routes = [
   bootstrap: [ AppComponent ],
   imports: [
     BrowserModule,
-    FsComponentModule,
+    FsClearModule,
     BrowserAnimationsModule,
     AppMaterialModule,
     FormsModule,
@@ -33,9 +35,11 @@ const routes: Routes = [
   entryComponents: [
   ],
   declarations: [
+    ClearCustomComponent,
     AppComponent,
     ExamplesComponent,
-    ExampleComponent
+    ExampleComponent,
+    Example2Component
   ],
   providers: [
   ],

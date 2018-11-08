@@ -18,7 +18,7 @@
       "dom"
     ],
     "paths": {
-      "fs-package": [
+      "ngx-clear": [
         "src/public_api.ts"
       ]
     }
