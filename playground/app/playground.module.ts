@@ -5,15 +5,15 @@ import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { FsExampleModule } from '@firestitch/example';
-
-import { FsClearModule } from 'ngx-clear';
+import { FsClearModule } from '@firestitch/clear';
 
 import { AppMaterialModule } from './material.module';
 import {
-ExampleComponent,
-ExamplesComponent,
-Example2Component,
-ClearCustomComponent } from './components';
+  ClearCustomComponent,
+  Example2Component,
+  ExampleComponent,
+  ExamplesComponent
+} from './components';
 import { AppComponent } from './app.component';
 
 
@@ -22,7 +22,7 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  bootstrap: [ AppComponent ],
+  bootstrap: [AppComponent],
   imports: [
     BrowserModule,
     FsClearModule,
@@ -32,8 +32,7 @@ const routes: Routes = [
     FsExampleModule.forRoot(),
     RouterModule.forRoot(routes),
   ],
-  entryComponents: [
-  ],
+  entryComponents: [],
   declarations: [
     ClearCustomComponent,
     AppComponent,
@@ -41,8 +40,7 @@ const routes: Routes = [
     ExampleComponent,
     Example2Component
   ],
-  providers: [
-  ],
+  providers: [],
 })
 export class PlaygroundModule {
 }
