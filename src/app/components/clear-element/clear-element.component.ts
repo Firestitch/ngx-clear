@@ -17,7 +17,8 @@ export class FsClearElementComponent implements AfterViewInit {
   }
 
   ngAfterViewInit() {
-    this.el.nativeElement.parentElement.parentElement.parentElement.appendChild(this.el.nativeElement.querySelector('.fs-clear-wrapper'));
+    this.el.nativeElement.parentElement.parentElement.parentElement
+    .appendChild(this.el.nativeElement.querySelector('.fs-clear-wrapper'));
   }
 
 }

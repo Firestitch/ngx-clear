@@ -6,4 +6,8 @@ import { Component } from '@angular/core';
 })
 export class ExampleComponent {
   public model;
+
+  cleared() {
+    console.log('Cleared');
+  }
 }
