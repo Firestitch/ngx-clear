@@ -7,13 +7,13 @@ import { Input, Component, Output, EventEmitter, ElementRef, AfterViewInit } fro
 })
 export class FsClearElementComponent implements AfterViewInit {
 
-  @Output() public clear = new EventEmitter<string>();
+  @Output() public clear = new EventEmitter<MouseEvent>();
   @Input() public show = false;
 
   constructor(private el: ElementRef) {}
 
-  public clearClick() {
-    this.clear.emit(null);
+  public clearClick(event) {
+    this.clear.emit(event);
   }
 
   ngAfterViewInit() {
