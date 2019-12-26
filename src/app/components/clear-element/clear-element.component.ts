@@ -1,9 +1,18 @@
-import { Input, Component, Output, EventEmitter, ElementRef, AfterViewInit } from '@angular/core';
+import {
+  AfterViewInit,
+  ChangeDetectionStrategy,
+  Component,
+  ElementRef,
+  EventEmitter,
+  Input,
+  Output
+} from '@angular/core';
 
 @Component({
   selector: 'fs-clear',
   templateUrl: 'clear-element.component.html',
   styleUrls: [ 'clear-element.component.scss' ],
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class FsClearElementComponent implements AfterViewInit {
 
@@ -12,13 +21,13 @@ export class FsClearElementComponent implements AfterViewInit {
 
   constructor(private el: ElementRef) {}
 
-  public clearClick(event) {
-    this.clear.emit(event);
+  public ngAfterViewInit() {
+    this.el.nativeElement.parentElement.parentElement.parentElement
+      .appendChild(this.el.nativeElement.querySelector('.fs-clear-wrapper'));
   }
 
-  ngAfterViewInit() {
-    this.el.nativeElement.parentElement.parentElement.parentElement
-    .appendChild(this.el.nativeElement.querySelector('.fs-clear-wrapper'));
+  public clearClick(event) {
+    this.clear.emit(event);
   }
 
 }
