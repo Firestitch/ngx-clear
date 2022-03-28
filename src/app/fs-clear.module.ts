@@ -23,7 +23,7 @@ import { FsClearElementComponent } from './components/clear-element/clear-elemen
   ]
 })
 export class FsClearModule {
-  static forRoot(): ModuleWithProviders {
+  static forRoot(): ModuleWithProviders<FsClearModule> {
     return {
       ngModule: FsClearModule
     };
