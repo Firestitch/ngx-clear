@@ -1,11 +1,6 @@
+
 .fs-clear-wrapper {
   align-self: flex-end;
-
-  ::ng-deep {
-    .mat-button-wrapper>* {
-      vertical-align: baseline !important;
-    }
-  }
 
   mat-icon {
     line-height: normal;
