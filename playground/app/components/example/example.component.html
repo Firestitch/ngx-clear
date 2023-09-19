@@ -1,4 +1,4 @@
 <mat-form-field>
   <mat-label>Clear</mat-label>
-  <input matInput fsClear [(ngModel)]="model" (cleared)="cleared()">
+  <input matInput [fsClear]="true" [(ngModel)]="model" (cleared)="cleared()">
 </mat-form-field>
