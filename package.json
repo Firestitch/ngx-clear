@@ -2,7 +2,7 @@
   "name": "@firestitch/clear",
   "title": "Clear",
   "description": "@firestitch/clear",
-  "version": "12.3.2",
+  "version": "12.3.4",
   "repository": {
     "type": "git",
     "url": "https://github.com/Firestitch/ngx-clear"

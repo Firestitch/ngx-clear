@@ -2,13 +2,14 @@
 ::ng-deep {
   .mat-form-field.mat-form-field-appearance-legacy {
     .fs-clear-wrapper {
-      align-self: flex-end;
-    
       mat-icon {
-        cursor: pointer;
         line-height: normal;
         font-size: 20px !important;
       }
     }
   }
+}
+
+mat-icon {
+  cursor: pointer;
 }

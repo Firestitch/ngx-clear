@@ -21,8 +21,8 @@ export class FsClearComponent {
   @Output() public ngModelChange = new EventEmitter<any>();
   @Output() public cleared = new EventEmitter();
 
-  public clear() {
+  public clear(event) {
     this.ngModelChange.emit(null);
-    this.cleared.emit();
+    this.cleared.emit(event);
   }
 }
