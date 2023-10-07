@@ -17,8 +17,10 @@ import {
 })
 export class FsClearElementComponent implements AfterViewInit {
 
-  @Output() public clear = new EventEmitter<MouseEvent>();
   @Input() public show = false;
+  @Input() public visible = false;
+
+  @Output() public clear = new EventEmitter<MouseEvent>();
 
   constructor(
     private el: ElementRef

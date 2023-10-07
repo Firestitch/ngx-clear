@@ -12,4 +12,9 @@
 
 mat-icon {
   cursor: pointer;
+  visibility: hidden;
+
+  &.visible {
+    visibility: visible;
+  }
 }

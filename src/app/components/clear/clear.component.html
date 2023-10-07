@@ -1,1 +1,5 @@
-<fs-clear (clear)="clear($event)" [show]="(fsClear !== false) && !!ngModel"></fs-clear>
+<fs-clear 
+  (clear)="clear($event)" 
+  [show]="fsClear !== false" 
+  [visible]="!!ngModel">
+</fs-clear>
