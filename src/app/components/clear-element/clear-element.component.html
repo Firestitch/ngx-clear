@@ -1,10 +1,9 @@
-
-<ng-container *ngIf="show">
-  <div class="mat-form-field-suffix fs-clear-wrapper">
+<div class="mat-form-field-suffix fs-clear-wrapper">
+  <ng-container *ngIf="show">
     <mat-icon 
         [ngClass]="{ visible: visible }"
         (click)="clearClick($event)">
       clear
     </mat-icon>
-  </div>
-</ng-container>
+  </ng-container>
+</div>
