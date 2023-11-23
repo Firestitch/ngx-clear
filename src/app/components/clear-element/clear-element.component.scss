@@ -9,14 +9,14 @@
         }
       }
     }
-
-    .mat-form-field-appearance-outline {
-      
-    }
-
+    
     &.mat-form-field-appearance-standard {
-      position: relative;
-      top: 5px;
+      .fs-clear-wrapper {
+        mat-icon {
+          position: relative;
+          top: 5px;
+        }
+      }
     }
   }
 }
