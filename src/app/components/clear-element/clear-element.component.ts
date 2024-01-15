@@ -5,14 +5,14 @@ import {
   ElementRef,
   EventEmitter,
   Input,
-  Output
+  Output,
 } from '@angular/core';
 
 
 @Component({
   selector: 'fs-clear',
-  templateUrl: 'clear-element.component.html',
-  styleUrls: ['clear-element.component.scss'],
+  templateUrl: './clear-element.component.html',
+  styleUrls: ['./clear-element.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class FsClearElementComponent implements AfterViewInit {
@@ -23,12 +23,12 @@ export class FsClearElementComponent implements AfterViewInit {
   @Output() public clear = new EventEmitter<MouseEvent>();
 
   constructor(
-    private el: ElementRef
+    private _el: ElementRef,
   ) { }
 
   public ngAfterViewInit() {
-    this.el.nativeElement.parentElement.parentElement.parentElement
-      .appendChild(this.el.nativeElement.querySelector('.fs-clear-wrapper'));
+    this._el.nativeElement.parentElement.parentElement.parentElement
+      .appendChild(this._el.nativeElement.querySelector('.fs-clear-wrapper'));
   }
 
   public clearClick(event) {

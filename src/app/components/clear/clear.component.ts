@@ -3,14 +3,14 @@ import {
   Component,
   EventEmitter,
   Input,
-  Output
+  Output,
 } from '@angular/core';
 
 
 @Component({
   selector: '[fsClear]',
-  templateUrl: 'clear.component.html',
-  styleUrls: ['clear.component.scss'],
+  templateUrl: './clear.component.html',
+  styleUrls: ['./clear.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class FsClearComponent {
