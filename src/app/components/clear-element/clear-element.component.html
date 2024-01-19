@@ -2,6 +2,7 @@
   <ng-container *ngIf="show">
     <button
         type="button"
+        [tabIndex]="-1"
         [ngClass]="{ visible: visible }"
         (click)="clearClick($event)"
         mat-icon-button>
