@@ -26,30 +26,29 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  bootstrap: [AppComponent],
-  imports: [
-    BrowserModule,
-    FsClearModule,
-    BrowserAnimationsModule,
-    AppMaterialModule,
-    FormsModule,
-    FsExampleModule.forRoot(),
-    RouterModule.forRoot(routes, { relativeLinkResolution: 'legacy' }),
-  ],
-  entryComponents: [],
-  declarations: [
-    ClearCustomComponent,
-    AppComponent,
-    ExamplesComponent,
-    ExampleComponent,
-    Example2Component,
-  ],
-  providers: [
-    {
-      provide: MAT_FORM_FIELD_DEFAULT_OPTIONS,
-      useValue: { appearance: 'legacy' },
-    },
-  ],
+    bootstrap: [AppComponent],
+    imports: [
+        BrowserModule,
+        FsClearModule,
+        BrowserAnimationsModule,
+        AppMaterialModule,
+        FormsModule,
+        FsExampleModule.forRoot(),
+        RouterModule.forRoot(routes, { relativeLinkResolution: 'legacy' }),
+    ],
+    declarations: [
+        ClearCustomComponent,
+        AppComponent,
+        ExamplesComponent,
+        ExampleComponent,
+        Example2Component,
+    ],
+    providers: [
+        {
+            provide: MAT_FORM_FIELD_DEFAULT_OPTIONS,
+            useValue: { appearance: 'legacy' },
+        },
+    ]
 })
 export class PlaygroundModule {
 }
