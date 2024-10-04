@@ -2,7 +2,7 @@
   "name": "@firestitch/clear",
   "title": "Clear",
   "description": "@firestitch/clear",
-  "version": "15.0.0",
+  "version": "15.0.1",
   "repository": {
     "type": "git",
     "url": "https://github.com/Firestitch/ngx-clear"
@@ -43,7 +43,6 @@
     "@angular/platform-browser": "^15.2.10",
     "@angular/platform-browser-dynamic": "^15.2.10",
     "@angular/router": "^15.2.10",
-    "@compodoc/compodoc": "^1.1.11",
     "@firestitch/api": "^14.0.0",
     "@firestitch/component-tools": "^15.0.5",
     "@firestitch/core": "^14.0.0",

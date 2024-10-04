@@ -27,12 +27,27 @@ export class FsClearElementComponent implements AfterViewInit {
   ) { }
 
   public ngAfterViewInit() {
-    this._el.nativeElement.parentElement.parentElement.parentElement
-      .appendChild(this._el.nativeElement.querySelector('.fs-clear-wrapper'));
+
+    const el = this._getFormFieldFlex(this._el.nativeElement);
+
+    const suffix = document.createElement('div');
+    suffix.classList.add('mat-mdc-form-field-icon-suffix');
+
+    el.appendChild(suffix);
+
+    suffix.appendChild(this._el.nativeElement);
   }
 
   public clearClick(event) {
     this.clear.emit(event);
+  }
+
+  private _getFormFieldFlex(el: Element) {
+    if (el.classList.contains('mat-mdc-form-field-flex')) {
+      return el;
+    }
+
+    return el.parentElement ? this._getFormFieldFlex(el.parentElement) : null;
   }
 
 }
