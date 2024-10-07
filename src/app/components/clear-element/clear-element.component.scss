@@ -1,31 +1,10 @@
 
 ::ng-deep {
-  .mat-form-field {
-    &.mat-form-field-appearance-legacy {
-      .fs-clear-wrapper {
-        button {
-          mat-icon {
-            line-height: normal;
-            font-size: 20px !important;
-          }
-        }
-      }
-    }
-
-    &.mat-form-field-appearance-standard {
-      .fs-clear-wrapper {
-        button {
-          position: relative;
-          top: 5px;
-        }
-      }
-    }
-  }
-
   .fs-clear-wrapper {
     button {
       cursor: pointer;
       visibility: hidden;
+      margin-right: -15px;
     
       &.visible {
         visibility: visible;
