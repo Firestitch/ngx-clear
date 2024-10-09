@@ -27,27 +27,32 @@ export class FsClearElementComponent implements AfterViewInit {
   ) { }
 
   public ngAfterViewInit() {
+    const formFieldEl = this._getFormField(this._el.nativeElement);
 
-    const el = this._getFormFieldFlex(this._el.nativeElement);
+    if(formFieldEl) {
+      formFieldEl.classList.add('mat-mdc-form-field-has-icon-suffix');
+      const formFieldFlexEl = formFieldEl.querySelector('.mat-mdc-form-field-flex');
 
-    const suffix = document.createElement('div');
-    suffix.classList.add('mat-mdc-form-field-icon-suffix');
+      if(formFieldFlexEl) {
+        const suffix = document.createElement('div');
+        suffix.classList.add('mat-mdc-form-field-icon-suffix');
 
-    el.appendChild(suffix);
-
-    suffix.appendChild(this._el.nativeElement);
+        formFieldFlexEl.appendChild(suffix);
+        suffix.appendChild(this._el.nativeElement);
+      }
+    }
   }
 
   public clearClick(event) {
     this.clear.emit(event);
   }
 
-  private _getFormFieldFlex(el: Element) {
-    if (el.classList.contains('mat-mdc-form-field-flex')) {
+  private _getFormField(el: Element): Element {
+    if (el.classList.contains('mat-mdc-form-field')) {
       return el;
     }
 
-    return el.parentElement ? this._getFormFieldFlex(el.parentElement) : null;
+    return el.parentElement ? this._getFormField(el.parentElement) : null;
   }
 
 }
