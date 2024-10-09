@@ -16,6 +16,7 @@ import {
 export class FsClearComponent {
 
   @Input() public ngModel: any = null;
+  @Input() public visible: boolean = false;
   @Input() public fsClear: string | boolean = true;
 
   @Output() public ngModelChange = new EventEmitter<any>();
