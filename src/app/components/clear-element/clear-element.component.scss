@@ -2,7 +2,7 @@
 ::ng-deep {
   .fs-clear-wrapper {
     .mat-mdc-button-touch-target {
-      display: none;
+      display: none !important;
     }
 
     button {
