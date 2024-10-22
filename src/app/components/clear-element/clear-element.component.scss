@@ -1,6 +1,10 @@
 
 ::ng-deep {
   .fs-clear-wrapper {
+    .mat-mdc-button-touch-target {
+      display: none;
+    }
+
     button {
       cursor: pointer;
       visibility: hidden;
