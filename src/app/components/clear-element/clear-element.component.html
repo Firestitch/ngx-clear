@@ -1,5 +1,5 @@
 <div class="fs-clear-wrapper">
-  <ng-container *ngIf="show">
+  @if (show) {
     <button
         type="button"
         [tabIndex]="-1"
@@ -10,5 +10,5 @@
         clear
       </mat-icon>
     </button>
-  </ng-container>
+  }
 </div>
