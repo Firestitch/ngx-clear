@@ -43,7 +43,11 @@ export class FsClearElementComponent implements AfterViewInit {
     }
   }
 
-  public clearClick(event) {
+  public clearClick(event: MouseEvent) {
+    event.stopPropagation();
+    event.stopImmediatePropagation();
+    event.preventDefault();
+
     this.clear.emit(event);
   }
 

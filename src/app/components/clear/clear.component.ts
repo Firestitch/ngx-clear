@@ -23,10 +23,6 @@ export class FsClearComponent {
   @Output() public cleared = new EventEmitter();
 
   public clear(event: MouseEvent) {
-    event.stopPropagation();
-    event.stopImmediatePropagation();
-    event.preventDefault();
-
     this.ngModelChange.emit(null);
     this.cleared.emit(event);
   }
