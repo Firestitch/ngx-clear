@@ -5,6 +5,7 @@ import {
   ElementRef,
   EventEmitter,
   Input,
+  OnChanges,
   Output,
 } from '@angular/core';
 
@@ -15,23 +16,32 @@ import {
   styleUrls: ['./clear-element.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class FsClearElementComponent implements AfterViewInit {
+export class FsClearElementComponent implements AfterViewInit, OnChanges {
 
   @Input() public show = false;
   @Input() public visible = false;
 
   @Output() public clear = new EventEmitter<MouseEvent>();
 
+  private _formFieldEl: Element;
+
   constructor(
     private _el: ElementRef,
-  ) { }
+  ) { 
+    this._formFieldEl = this._getFormField(this._el.nativeElement);
+  }
+
+  public ngOnChanges() {
+    if(this.show && this.visible) {
+      this._formFieldEl?.classList.add('mat-mdc-form-field-has-icon-suffix');
+    } else {
+      this._formFieldEl?.classList.remove('mat-mdc-form-field-has-icon-suffix');
+    }
+  }
 
   public ngAfterViewInit() {
-    const formFieldEl = this._getFormField(this._el.nativeElement);
-
-    if(formFieldEl) {
-      formFieldEl.classList.add('mat-mdc-form-field-has-icon-suffix');
-      const formFieldFlexEl = formFieldEl.querySelector('.mat-mdc-form-field-flex');
+    if(this._formFieldEl) {
+      const formFieldFlexEl = this._formFieldEl.querySelector('.mat-mdc-form-field-flex');
 
       if(formFieldFlexEl) {
         const suffix = document.createElement('div');
