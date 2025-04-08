@@ -4,6 +4,7 @@ import {
   Component,
   ElementRef,
   EventEmitter,
+  inject,
   Input,
   OnChanges,
   Output,
@@ -24,14 +25,13 @@ export class FsClearElementComponent implements AfterViewInit, OnChanges {
   @Output() public clear = new EventEmitter<MouseEvent>();
 
   private _formFieldEl: Element;
-
-  constructor(
-    private _el: ElementRef,
-  ) { 
-    this._formFieldEl = this._getFormField(this._el.nativeElement);
-  }
+  private _el = inject(ElementRef);
 
   public ngOnChanges() {
+    this.updateSuffixIcon();
+  }
+  
+  public updateSuffixIcon() {
     if(this.show && this.visible) {
       this._formFieldEl?.classList.add('mat-mdc-form-field-has-icon-suffix');
     } else {
@@ -40,6 +40,7 @@ export class FsClearElementComponent implements AfterViewInit, OnChanges {
   }
 
   public ngAfterViewInit() {
+    this._formFieldEl = this._getFormField(this._el.nativeElement);
     if(this._formFieldEl) {
       const formFieldFlexEl = this._formFieldEl.querySelector('.mat-mdc-form-field-flex');
 
@@ -50,6 +51,8 @@ export class FsClearElementComponent implements AfterViewInit, OnChanges {
         formFieldFlexEl.appendChild(suffix);
         suffix.appendChild(this._el.nativeElement);
       }
+      
+      this.updateSuffixIcon();
     }
   }
 
