@@ -8,19 +8,17 @@ import { FsClearElementComponent } from './components/clear-element/clear-elemen
 
 
 @NgModule({
-  imports: [
-    CommonModule,
-    MatIconModule,
-    MatButtonModule
-  ],
-  exports: [
-    FsClearComponent,
-    FsClearElementComponent
-  ],
-  declarations: [
-    FsClearComponent,
-    FsClearElementComponent
-  ]
+    imports: [
+        CommonModule,
+        MatIconModule,
+        MatButtonModule,
+        FsClearComponent,
+        FsClearElementComponent
+    ],
+    exports: [
+        FsClearComponent,
+        FsClearElementComponent
+    ]
 })
 export class FsClearModule {
   static forRoot(): ModuleWithProviders<FsClearModule> {

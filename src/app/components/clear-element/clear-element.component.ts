@@ -9,13 +9,22 @@ import {
   OnChanges,
   Output,
 } from '@angular/core';
+import { MatIconButton } from '@angular/material/button';
+import { NgClass } from '@angular/common';
+import { MatIcon } from '@angular/material/icon';
 
 
 @Component({
-  selector: 'fs-clear',
-  templateUrl: './clear-element.component.html',
-  styleUrls: ['./clear-element.component.scss'],
-  changeDetection: ChangeDetectionStrategy.OnPush,
+    selector: 'fs-clear',
+    templateUrl: './clear-element.component.html',
+    styleUrls: ['./clear-element.component.scss'],
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    standalone: true,
+    imports: [
+        MatIconButton,
+        NgClass,
+        MatIcon,
+    ],
 })
 export class FsClearElementComponent implements AfterViewInit, OnChanges {
 

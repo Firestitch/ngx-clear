@@ -5,13 +5,16 @@ import {
   Input,
   Output,
 } from '@angular/core';
+import { FsClearElementComponent } from '../clear-element/clear-element.component';
 
 
 @Component({
-  selector: '[fsClear]',
-  templateUrl: './clear.component.html',
-  styleUrls: ['./clear.component.scss'],
-  changeDetection: ChangeDetectionStrategy.OnPush,
+    selector: '[fsClear]',
+    templateUrl: './clear.component.html',
+    styleUrls: ['./clear.component.scss'],
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    standalone: true,
+    imports: [FsClearElementComponent],
 })
 export class FsClearComponent {
 
