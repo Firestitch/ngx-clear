@@ -1,4 +1,4 @@
-import { Input, Component, Output, EventEmitter, ElementRef, AfterViewInit } from '@angular/core';
+import { Input, Component, Output, EventEmitter, ElementRef, AfterViewInit, inject } from '@angular/core';
 import { FsClearElementComponent } from '../../../../src/app/components/clear-element/clear-element.component';
 
 @Component({
@@ -9,11 +9,11 @@ import { FsClearElementComponent } from '../../../../src/app/components/clear-el
     imports: [FsClearElementComponent],
 })
 export class ClearCustomComponent {
+  private el = inject(ElementRef);
+
 
   @Input() public ngModel: string | null = null;
   @Output() public ngModelChange = new EventEmitter<string>();
-
-  constructor(private el: ElementRef) {}
 
   public clear() {
     this.ngModelChange.emit(null);
