@@ -12,7 +12,7 @@ import { FsClearComponent } from '../../../../src/app/components/clear/clear.com
   selector: 'example',
   templateUrl: './example.component.html',
   standalone: true,
-  imports: [MatFormField, MatLabel, MatInput, FormsModule, FsClearComponent],
+  imports: [MatFormField, MatLabel, MatInput, FormsModule, FsClearComponent, FormsModule],
 })
 export class ExampleComponent {
 
