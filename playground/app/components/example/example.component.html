@@ -1,8 +1,11 @@
 <mat-form-field>
-  <mat-label>Clear</mat-label>
-  <input 
-    matInput 
-    [fsClear]="true" 
-    [(ngModel)]="model" 
+  <mat-label>
+    Clear
+  </mat-label>
+  <input
+    matInput
+    [fsClear]="true"
+    [(ngModel)]="model"
+    (ngModelChange)="ngModelChange($event)"
     (cleared)="cleared()">
 </mat-form-field>

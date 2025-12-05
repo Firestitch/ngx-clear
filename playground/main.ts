@@ -1,22 +1,23 @@
 import { enableProdMode, importProvidersFrom } from '@angular/core';
-import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
-
-
-import { environment } from './environments/environment';
-import { MAT_FORM_FIELD_DEFAULT_OPTIONS } from '@angular/material/form-field';
-import { BrowserModule, bootstrapApplication } from '@angular/platform-browser';
-import { FsClearModule } from '@firestitch/clear';
-import { provideAnimations } from '@angular/platform-browser/animations';
 import { FormsModule } from '@angular/forms';
+import { BrowserModule, bootstrapApplication } from '@angular/platform-browser';
+import { Routes, provideRouter } from '@angular/router';
+
+import { MAT_FORM_FIELD_DEFAULT_OPTIONS } from '@angular/material/form-field';
+
+import { FsClearModule } from '@firestitch/clear';
 import { FsExampleModule } from '@firestitch/example';
-import { provideRouter, Routes } from '@angular/router';
-import { ExamplesComponent } from './app/components';
+import { FsMessageModule } from '@firestitch/message';
+
+import { provideAnimations } from '@angular/platform-browser/animations';
+
 import { AppComponent } from './app/app.component';
+import { ExamplesComponent } from './app/components';
+import { environment } from './environments/environment';
 
 const routes: Routes = [
   { path: '', component: ExamplesComponent },
 ];
-
 
 
 if (environment.production) {
@@ -24,15 +25,15 @@ if (environment.production) {
 }
 
 bootstrapApplication(AppComponent, {
-    providers: [
-        importProvidersFrom(BrowserModule, FsClearModule, FormsModule, FsExampleModule.forRoot()),
-        {
-            provide: MAT_FORM_FIELD_DEFAULT_OPTIONS,
-            useValue: { appearance: 'outline' },
-        },
-        provideAnimations(),
-        provideRouter(routes),
-    ]
+  providers: [
+    importProvidersFrom(BrowserModule, FsClearModule, FormsModule, FsExampleModule.forRoot(), FsMessageModule.forRoot()),
+    {
+      provide: MAT_FORM_FIELD_DEFAULT_OPTIONS,
+      useValue: { appearance: 'outline' },
+    },
+    provideAnimations(),
+    provideRouter(routes),
+  ],
 })
-  .catch(err => console.error(err));
+  .catch((err) => console.error(err));
 
