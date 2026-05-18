@@ -42,11 +42,11 @@ export class FsClearElementComponent implements AfterViewInit, OnChanges {
   }
   
   public updateSuffixIcon() {
-    if(this.show && this.visible) {
-      this._formFieldEl?.classList.add('mat-mdc-form-field-has-icon-suffix');
-    } else {
-      this._formFieldEl?.classList.remove('mat-mdc-form-field-has-icon-suffix');
-    }
+    // if(this.show && this.visible) {
+    //   this._formFieldEl?.classList.add('mat-mdc-form-field-has-icon-suffix');
+    // } else {
+    //   this._formFieldEl?.classList.add('mat-mdc-form-field-has-icon-suffix');
+    // }
   }
 
   public ngAfterViewInit() {
