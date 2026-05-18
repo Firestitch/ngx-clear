@@ -2,14 +2,14 @@
 :host {
   position: relative;
   display: block;
+  width: var(--mdc-icon-button-state-layer-size, 48px);
 }
 
 ::ng-deep {
   .fs-clear-wrapper {
     position: absolute;
     top: 50%;
-    transform: translate(calc((100% - max(16px,var(--mdc-outlined-text-field-container-shape, var(--mat-app-corner-extra-small)))) * -1) , -50%);
-    margin-right: -16px;
+    transform: translate(0 , -50%);
 
     .mat-mdc-button-touch-target {
       display: none !important;

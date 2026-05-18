@@ -7,7 +7,6 @@ import {
   EventEmitter,
   inject,
   Input,
-  OnChanges,
   Output,
 } from '@angular/core';
 
@@ -27,7 +26,7 @@ import { MatIcon } from '@angular/material/icon';
     MatIcon,
   ],
 })
-export class FsClearElementComponent implements AfterViewInit, OnChanges {
+export class FsClearElementComponent implements AfterViewInit {
 
   @Input() public show = false;
   @Input() public visible = false;
@@ -37,20 +36,10 @@ export class FsClearElementComponent implements AfterViewInit, OnChanges {
   private _formFieldEl: Element;
   private _el = inject(ElementRef);
 
-  public ngOnChanges() {
-    this.updateSuffixIcon();
-  }
-  
-  public updateSuffixIcon() {
-    // if(this.show && this.visible) {
-    //   this._formFieldEl?.classList.add('mat-mdc-form-field-has-icon-suffix');
-    // } else {
-    //   this._formFieldEl?.classList.add('mat-mdc-form-field-has-icon-suffix');
-    // }
-  }
-
   public ngAfterViewInit() {
     this._formFieldEl = this._getFormField(this._el.nativeElement);
+    this._formFieldEl?.classList.add('mat-mdc-form-field-has-icon-suffix');
+    
     if(this._formFieldEl) {
       const formFieldFlexEl = this._formFieldEl.querySelector('.mat-mdc-form-field-flex');
 
@@ -61,8 +50,6 @@ export class FsClearElementComponent implements AfterViewInit, OnChanges {
         formFieldFlexEl.appendChild(suffix);
         suffix.appendChild(this._el.nativeElement);
       }
-      
-      this.updateSuffixIcon();
     }
   }
 
