@@ -27,6 +27,7 @@ import { FsClearElementComponent } from '../clear-element/clear-element.componen
 export class FsClearComponent implements OnInit {
 
   @Input() public visible: boolean = null;
+
   @Input() public fsClear: string | boolean = true;
 
   @Output() public cleared = new EventEmitter();

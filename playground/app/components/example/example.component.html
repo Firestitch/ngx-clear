@@ -1,12 +1,26 @@
-<mat-form-field>
-  <mat-label>
-    Clear
-  </mat-label>
-  <input
-    matInput
-    [fsClear]="true"
-    [(ngModel)]="model"
-    name="model"
-    (ngModelChange)="ngModelChange($event)"
-    (cleared)="cleared()">
-</mat-form-field>
+<div class="fs-row.gap-sm">
+  <mat-form-field>
+    <mat-label>
+      Clear
+    </mat-label>
+    <input
+      matInput
+      [fsClear]="true"
+      [(ngModel)]="model"
+      name="model"
+      (ngModelChange)="ngModelChange($event)"
+      (cleared)="cleared()">
+  </mat-form-field>
+  <mat-form-field>
+    <mat-label>
+      Clear show false
+    </mat-label>
+    <input
+      matInput
+      [fsClear]="false"
+      [(ngModel)]="model"
+      name="model"
+      (ngModelChange)="ngModelChange($event)"
+      (cleared)="cleared()">
+  </mat-form-field>
+</div>

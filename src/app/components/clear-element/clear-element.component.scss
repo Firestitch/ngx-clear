@@ -1,11 +1,8 @@
-
-:host {
+.fs-clear-container {
   position: relative;
   display: block;
   width: var(--mdc-icon-button-state-layer-size, 48px);
-}
-
-::ng-deep {
+  
   .fs-clear-wrapper {
     position: absolute;
     top: 50%;
@@ -24,4 +21,8 @@
       }
     }
   }
+}
+
+:host:not(.show) {
+  display: none !important;
 }

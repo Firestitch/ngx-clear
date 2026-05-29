@@ -1,0 +1,7 @@
+fs-show:not(.show) {
+  display: none !important;
+}
+
+fs-show.show {
+  background-color: red !important;
+}

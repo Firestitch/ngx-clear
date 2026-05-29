@@ -1,1 +1,6 @@
-<fs-clear (clear)="clear()" [show]="!!ngModel" [visible]="!!ngModel"></fs-clear>
+@if (!!ngModel) {
+  <fs-clear
+    (clear)="clear()"
+    [visible]="!!ngModel">
+  </fs-clear>
+}

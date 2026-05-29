@@ -5,6 +5,7 @@ import {
   Component,
   ElementRef,
   EventEmitter,
+  HostBinding,
   inject,
   Input,
   Output,
@@ -28,8 +29,10 @@ import { MatIcon } from '@angular/material/icon';
 })
 export class FsClearElementComponent implements AfterViewInit {
 
-  @Input() public show = false;
   @Input() public visible = false;
+
+  @HostBinding('class.show')
+  @Input() public show = true;
 
   @Output() public clear = new EventEmitter<MouseEvent>();
 
